@@ -495,13 +495,16 @@ pages:
     title: 'resetPasswordForEmail()'
     $ref: '@supabase/gotrue-js.GoTrueClient.resetPasswordForEmail'
     notes: |
-      Sends a password reset request to an email address.
+      - Sends a password reset request to an email address.
       When the user clicks the reset link in the email they are redirected back to your application.
       Prompt the user for a new password and call `auth.updateUser()`:
       ```js
       const { data, error } = await supabase.auth
         .updateUser({ password: new_password })
       ```
+      - Currently, we do not support hash-based routers because supabase auth supports an implicit grant flow between the client and supabase which indicates that the access token should be returned in the URL fragment.
+      - Clicking the password recovery link emits 2 events - the `"SIGNED_IN"` event and `"PASSWORD_RECOVERY"` event.
+      - If you want to handle the reset flow on the server-side, you cannot set the `options.redirectTo` param in the `resetPasswordForEmail` to your server-side endpoint. This is because your server-side environment will not be able to parse the URL fragments since that is only present in the browser. To handle this, you can redirect to the client-side first and then call your server-side endpoint with the access / refresh tokens in a header.
     examples:
       - name: Reset password
         isSpotlight: true
