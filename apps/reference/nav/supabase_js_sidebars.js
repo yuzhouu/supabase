@@ -34,6 +34,7 @@ const sidebars = {
       type: 'category',
       label: 'Auth',
       items: [
+        'generated/user',
         'generated/auth-signup',
         'generated/auth-signinwithpassword',
         'generated/auth-signinwithotp',

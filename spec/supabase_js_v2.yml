@@ -98,6 +98,9 @@ pages:
           ```
 
           For React Native we recommend using `AsyncStorage` as the storage implementation for Supabase Auth.
+  User:
+    title: 'User object'
+    $ref: '@supabase/gotrue-js.User'
   auth.signUp():
     title: 'signUp()'
     $ref: '@supabase/gotrue-js.GoTrueClient.signUp'
