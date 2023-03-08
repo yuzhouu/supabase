@@ -1877,4 +1877,9 @@ module.exports = [
     source: '/docs/guides/resources/postgres/which-version-of-postgres',
     destination: '/docs/guides/database/postgres/which-version-of-postgres',
   },
+  {
+    permanent: true,
+    source: '/oss',
+    destination: '/open-source',
+  },
 ]
