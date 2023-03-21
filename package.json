@@ -9,6 +9,7 @@
     "apps/www",
     "apps/docs",
     "apps/new-docs",
+    "apps/open-source",
     "studio",
     "tests",
     "packages/*"
